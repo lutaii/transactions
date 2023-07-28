@@ -8,8 +8,9 @@ import '../../../models/donut_data.dart';
 class DonutPainter extends CustomPainter {
   final List<DonutData> data;
   final double totalValue;
+  final double thickness;
 
-  DonutPainter(this.data)
+  DonutPainter(this.data, this.thickness)
       : totalValue = data.map((item) => item.total).reduce((a, b) => a + b);
 
   @override
@@ -21,13 +22,11 @@ class DonutPainter extends CustomPainter {
     double startAngle = -pi / 2;
     double endAngle;
 
-    const double ringThickness = 50;
-
     for (var index = 0; index < data.length; index++) {
       final paint = Paint()
         ..color = data[index].transactionType.color()
         ..style = PaintingStyle.stroke
-        ..strokeWidth = ringThickness;
+        ..strokeWidth = thickness;
 
       endAngle = startAngle + 2 * pi * data[index].total / totalValue;
 

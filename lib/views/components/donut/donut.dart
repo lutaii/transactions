@@ -11,7 +11,7 @@ class Donut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: DonutPainter(data),
+      painter: DonutPainter(data, 50),
       child: Container(),
     );
   }
