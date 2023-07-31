@@ -50,6 +50,8 @@ class MyApp extends StatelessWidget {
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.blue),
               foregroundColor: MaterialStateProperty.all(Colors.white),
+              shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0))),
               overlayColor:
                   MaterialStateProperty.all(Colors.white.withOpacity(0.3)),
               textStyle: MaterialStateProperty.all(
